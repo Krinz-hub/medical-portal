@@ -1,0 +1,32 @@
+@import './styles/tokens.css';
+@import './styles/components.css';
+@import './styles/forms.css';
+@import './styles/tables.css';
+@import './styles/layout.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans min-h-screen antialiased;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Restrained, functional scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded hover:bg-slate-400;
+}
+

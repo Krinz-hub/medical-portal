@@ -1,0 +1,49 @@
+/* ==========================================================================
+   Global Layout, Header, and Alert Banner Styles
+   ========================================================================== */
+.page-container {
+  @apply space-y-6 animate-fade-in;
+}
+
+.page-header {
+  @apply bg-white rounded-xl border border-slate-200 shadow-sm p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4;
+}
+
+.page-header-actions {
+  @apply flex flex-wrap items-center gap-2;
+}
+
+.section-container {
+  @apply bg-white rounded-xl border border-slate-200 shadow-sm p-5 space-y-4;
+}
+
+.section-header {
+  @apply flex items-center justify-between;
+}
+
+/* Standardized Empty State */
+.empty-state-clinical {
+  @apply p-12 text-center text-sm text-slate-500 bg-slate-50 rounded-lg border border-dashed border-slate-200 space-y-2;
+}
+
+/* Standardized Alert Banners */
+.alert-banner {
+  @apply p-4 rounded-xl border text-xs leading-relaxed flex items-start gap-3;
+}
+
+.alert-banner-success {
+  @apply p-4 rounded-xl border text-xs leading-relaxed flex items-start gap-3 bg-emerald-50 border-emerald-200 text-emerald-800;
+}
+
+.alert-banner-warning {
+  @apply p-4 rounded-xl border text-xs leading-relaxed flex items-start gap-3 bg-amber-50 border-amber-200 text-amber-950;
+}
+
+.alert-banner-danger {
+  @apply p-4 rounded-xl border text-xs leading-relaxed flex items-start gap-3 bg-rose-50 border-rose-200 text-rose-800;
+}
+
+.alert-banner-info {
+  @apply p-4 rounded-xl border text-xs leading-relaxed flex items-start gap-3 bg-teal-50/80 border-teal-200 text-teal-950;
+}
+
