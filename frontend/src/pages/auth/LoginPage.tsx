@@ -34,19 +34,19 @@ export const LoginPage: React.FC = () => {
       <div className="max-w-md w-full space-y-6 animate-scale-in">
         {/* Header */}
         <div className="text-center space-y-2">
-          <div className="w-12 h-12 rounded-lg bg-teal-700 text-white flex items-center justify-center mx-auto">
+          <div className="w-12 h-12 rounded-lg bg-[#0E4F43] text-white flex items-center justify-center mx-auto shadow-xs">
             <Activity className="w-6 h-6" />
           </div>
-          <h2 className="text-2xl font-bold text-slate-900">Sign in to MedPulse</h2>
+          <h2 className="font-heading text-2xl font-bold text-slate-900">Sign in to MedPulse</h2>
           <p className="text-sm text-slate-500 max-w-sm mx-auto">
             Clinical appointment scheduling and live queue management
           </p>
         </div>
 
         {/* Standard Login Form */}
-        <div className="card-clinical p-6 sm:p-8 space-y-5">
+        <div className="bg-white rounded-xl border border-slate-200/90 p-6 sm:p-8 space-y-5 shadow-xs">
           {error && (
-            <div className="alert-banner-error">
+            <div className="alert-banner-danger">
               <AlertCircle className="w-4 h-4 shrink-0" />
               <span>{error}</span>
             </div>
@@ -79,7 +79,6 @@ export const LoginPage: React.FC = () => {
               size="lg"
               className="w-full"
               isLoading={isLoading}
-              rightIcon={<ArrowRight className="w-4 h-4" />}
             >
               Sign In
             </Button>
@@ -95,7 +94,7 @@ export const LoginPage: React.FC = () => {
                   setEmail('dr.sharma@healthhub.com');
                   setPassword('Password123!');
                 }}
-                className="text-teal-700 hover:text-teal-800 hover:underline font-medium"
+                className="text-[#0E4F43] hover:underline font-semibold"
               >
                 Doctor account
               </button>
@@ -106,18 +105,18 @@ export const LoginPage: React.FC = () => {
                   setEmail('rahul.patient@gmail.com');
                   setPassword('Password123!');
                 }}
-                className="text-teal-700 hover:text-teal-800 hover:underline font-medium"
+                className="text-[#0E4F43] hover:underline font-semibold"
               >
                 Patient account
               </button>
             </div>
 
             <div className="pt-2 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs">
-              <Link to="/register/patient" className="font-semibold text-teal-700 hover:text-teal-800">
+              <Link to="/register/patient" className="font-semibold text-[#0E4F43] hover:underline">
                 New patient? Register
               </Link>
-              <Link to="/register/doctor" className="font-semibold text-slate-600 hover:text-slate-900">
-                Register Doctor Practice →
+              <Link to="/register/doctor" className="font-semibold text-slate-700 hover:text-slate-900 hover:underline">
+                Register Doctor Practice
               </Link>
             </div>
           </div>

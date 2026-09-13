@@ -283,8 +283,8 @@ export const DoctorSchedulePage: React.FC = () => {
       {/* 2. Automated Slot Generator Tool */}
       <div className="section-container">
         <div>
-          <h2 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
-            <Calendar className="w-4 h-4 text-teal-700" />
+          <h2 className="font-heading text-sm font-semibold text-slate-900 flex items-center gap-2">
+            <Calendar className="w-4 h-4 text-[#0E4F43]" />
             <span>Generate Appointment Slots</span>
           </h2>
           <p className="text-xs text-slate-500 mt-0.5">
@@ -335,8 +335,8 @@ export const DoctorSchedulePage: React.FC = () => {
       <div className="section-container">
         <div className="section-header flex-col sm:flex-row sm:items-center gap-2">
           <div>
-            <h2 className="text-sm font-semibold text-slate-900 flex items-center gap-2">
-              <Lock className="w-4 h-4 text-teal-700" />
+            <h2 className="font-heading text-sm font-semibold text-slate-900 flex items-center gap-2">
+              <Lock className="w-4 h-4 text-[#0E4F43]" />
               <span>Inspect & Block Specific Slots</span>
             </h2>
             <p className="text-xs text-slate-500 mt-0.5">

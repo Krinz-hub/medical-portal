@@ -154,41 +154,41 @@ export const DoctorDashboardPage: React.FC = () => {
 
       {/* Current Active Consultation Callout */}
       {currentServing ? (
-        <div className="p-4 sm:p-5 rounded-xl bg-teal-50/70 border border-teal-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4 animate-fade-in">
+        <div className="p-4 sm:p-5 rounded-xl bg-[#F0FDF8] border border-[#A7F3D0] flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-xs">
           <div className="flex items-start gap-3.5">
-            <div className="w-11 h-11 rounded-lg bg-teal-700 text-white flex items-center justify-center font-bold text-base shrink-0">
+            <div className="w-11 h-11 rounded-lg bg-[#0E4F43] text-white flex items-center justify-center font-mono font-bold text-base shrink-0 shadow-xs">
               #{currentServing.queueNumber}
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <span className="text-[10px] font-semibold uppercase tracking-wider bg-teal-200/80 text-teal-900 px-2 py-0.5 rounded">
-                  Currently Consulting
+                <span className="text-[10px] font-semibold bg-[#ECFDF5] text-[#059669] px-2 py-0.5 rounded border border-[#A7F3D0]">
+                  In Consultation
                 </span>
-                <span className="text-xs text-teal-800 font-medium">
+                <span className="font-mono text-xs text-[#0E4F43] font-semibold">
                   Started at {currentServing.startedAt ? new Date(currentServing.startedAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : currentServing.startTime}
                 </span>
               </div>
-              <h3 className="text-base font-bold text-slate-900 mt-1">{currentServing.patientName}</h3>
-              <p className="text-xs text-slate-600">Reason: {currentServing.reason}</p>
+              <h3 className="font-heading text-base font-bold text-slate-900 mt-1">{currentServing.patientName}</h3>
+              <p className="text-xs text-slate-600">Reason: {currentServing.reason || 'General Consultation'}</p>
             </div>
           </div>
 
           <Link to="/doctor/queue">
-            <Button variant="primary" size="md" rightIcon={<ArrowRight className="w-4 h-4" />}>
-              Manage in Live Queue
+            <Button variant="primary" size="md">
+              Manage Live Queue
             </Button>
           </Link>
         </div>
       ) : (
-        <div className="p-4 rounded-xl bg-white border border-slate-200 flex items-center justify-between">
+        <div className="p-4 rounded-xl bg-white border border-slate-200/90 shadow-xs flex items-center justify-between">
           <div>
-            <h4 className="text-sm font-semibold text-slate-800">No Consultation In Progress</h4>
+            <h4 className="font-heading text-sm font-semibold text-slate-900">No Consultation In Progress</h4>
             <p className="text-xs text-slate-500 mt-0.5">
-              {nextPatient ? `Next in line is ${nextPatient.patientName} (Token #${nextPatient.queueNumber})` : 'Queue is currently clear.'}
+              {nextPatient ? `Next in line: ${nextPatient.patientName} (Token #${nextPatient.queueNumber})` : 'All scheduled patients have been attended.'}
             </p>
           </div>
           <Link to="/doctor/queue">
-            <Button variant="primary" size="sm" rightIcon={<Play className="w-3.5 h-3.5" />}>
+            <Button variant="primary" size="sm" leftIcon={<Play className="w-3.5 h-3.5" />}>
               Open Queue
             </Button>
           </Link>

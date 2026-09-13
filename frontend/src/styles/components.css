@@ -1,38 +1,39 @@
 /* ==========================================================================
-   Global Button Component Styles
+   Global Button Component Styles - Dignified Clinical Restraint
    ========================================================================== */
 .btn {
-  @apply inline-flex items-center justify-center font-semibold transition-colors duration-150 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600/20 disabled:opacity-50 disabled:cursor-not-allowed select-none;
+  @apply inline-flex items-center justify-center font-medium transition-colors duration-150 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#0E4F43]/30 disabled:opacity-40 disabled:cursor-not-allowed select-none;
 }
 
 /* Button Variants */
 .btn-primary {
-  @apply bg-teal-700 text-white hover:bg-teal-800 border border-teal-700 active:bg-teal-900;
+  @apply bg-[#0E4F43] text-white hover:bg-[#093C33] border border-[#0E4F43] active:bg-[#062923] shadow-sm;
 }
 
 .btn-secondary {
-  @apply bg-slate-800 text-white hover:bg-slate-900 border border-slate-800;
+  @apply bg-[#090D16] text-white hover:bg-slate-800 border border-[#090D16] shadow-sm;
 }
 
 .btn-outline {
-  @apply bg-white text-slate-700 border border-slate-300 hover:bg-slate-50 hover:text-slate-900;
+  @apply bg-white text-slate-800 border border-slate-200 hover:bg-slate-50 hover:border-slate-300;
+  box-shadow: 0 1px 2px 0 rgba(9, 13, 22, 0.04);
 }
 
 .btn-ghost {
-  @apply text-slate-700 hover:bg-slate-100 active:bg-slate-200 border border-transparent;
+  @apply text-slate-700 hover:bg-slate-100 hover:text-slate-900 border border-transparent;
 }
 
 .btn-danger {
-  @apply bg-rose-600 text-white hover:bg-rose-700 border border-rose-600;
+  @apply bg-[#E11D48] text-white hover:bg-[#BE123C] border border-[#E11D48];
 }
 
 .btn-success {
-  @apply bg-emerald-600 text-white hover:bg-emerald-700 border border-emerald-600;
+  @apply bg-[#059669] text-white hover:bg-[#047857] border border-[#059669];
 }
 
 /* Button Sizes */
 .btn-sm {
-  @apply px-3 py-1.5 text-xs gap-1.5;
+  @apply px-3 py-1.5 text-xs gap-1.5 font-medium;
 }
 
 .btn-md {
@@ -44,25 +45,32 @@
 }
 
 /* ==========================================================================
-   Global Card Component Styles
+   Clinical Cards & Structured Units
    ========================================================================== */
 .card-clinical {
-  @apply bg-white rounded-xl border border-slate-200 shadow-sm;
+  @apply bg-white rounded-xl border border-slate-200/90;
+  box-shadow: 0 1px 2px 0 rgba(9, 13, 22, 0.04);
 }
 
 .card-clinical-interactive {
-  @apply bg-white rounded-xl border border-slate-200 shadow-sm hover:border-slate-300 transition-colors duration-150;
+  @apply bg-white rounded-xl border border-slate-200/90 hover:border-slate-300 transition-colors duration-150;
+  box-shadow: 0 1px 2px 0 rgba(9, 13, 22, 0.04);
 }
 
 .stat-card-clinical {
-  @apply bg-white rounded-xl border border-slate-200 shadow-sm p-4 space-y-2;
+  @apply bg-white rounded-xl border border-slate-200/90 p-4 space-y-2;
+  box-shadow: 0 1px 2px 0 rgba(9, 13, 22, 0.04);
 }
 
 /* ==========================================================================
-   Global Badge & Status Pill Styles
+   Clinical Queue Token Display & Badges
    ========================================================================== */
+.token-display {
+  @apply inline-flex items-center justify-center font-mono font-bold tracking-tight rounded-lg;
+}
+
 .badge-clinical {
-  @apply inline-flex items-center gap-1.5 rounded-md border font-semibold tracking-tight;
+  @apply inline-flex items-center gap-1.5 rounded-md border font-medium text-xs;
 }
 
 .badge-sm {
@@ -77,35 +85,35 @@
   @apply w-1.5 h-1.5 rounded-full shrink-0;
 }
 
-/* Badge Status Variants */
+/* Status Color Variants */
 .badge-brand {
-  @apply bg-teal-50 text-teal-800 border-teal-200;
+  @apply bg-[#F0FDF8] text-[#0E4F43] border-[#A7F3D0];
 }
 
 .badge-available,
 .badge-confirmed,
 .badge-success {
-  @apply bg-emerald-50 text-emerald-700 border-emerald-200;
+  @apply bg-[#ECFDF5] text-[#059669] border-[#A7F3D0];
 }
 
 .badge-busy,
 .badge-in-progress {
-  @apply bg-blue-50 text-blue-700 border-blue-200;
+  @apply bg-sky-50 text-sky-800 border-sky-200;
 }
 
 .badge-delayed,
 .badge-warning {
-  @apply bg-amber-50 text-amber-800 border-amber-200;
+  @apply bg-[#FFFBEB] text-[#B45309] border-[#FDE68A];
 }
 
 .badge-cancelled,
 .badge-no-show,
 .badge-danger {
-  @apply bg-rose-50 text-rose-700 border-rose-200;
+  @apply bg-[#FFF1F2] text-[#E11D48] border-[#FECDD3];
 }
 
 .badge-checked-in {
-  @apply bg-cyan-50 text-cyan-700 border-cyan-200;
+  @apply bg-teal-50 text-teal-800 border-teal-200;
 }
 
 .badge-offline,
@@ -115,14 +123,14 @@
 }
 
 /* ==========================================================================
-   Global Modal & Dialog Styles
+   Modal Dialogs
    ========================================================================== */
 .modal-backdrop {
-  @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 animate-fade-in;
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-[2px];
 }
 
 .modal-panel {
-  @apply w-full bg-white rounded-xl border border-slate-200 shadow-lg p-6 space-y-4 animate-scale-in;
+  @apply w-full bg-white rounded-xl border border-slate-200 shadow-xl p-6 space-y-4;
 }
 
 .modal-header {
@@ -130,5 +138,5 @@
 }
 
 .modal-title {
-  @apply text-base font-bold text-slate-900;
+  @apply font-heading text-lg font-bold text-slate-900;
 }

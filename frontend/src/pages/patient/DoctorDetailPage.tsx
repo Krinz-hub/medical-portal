@@ -178,9 +178,9 @@ export const DoctorDetailPage: React.FC = () => {
       </Link>
 
       {/* Doctor Profile Banner */}
-      <div className="card-clinical p-6 sm:p-7">
+      <div className="bg-white rounded-xl border border-slate-200/90 shadow-xs p-6 sm:p-7">
         <div className="flex flex-col sm:flex-row items-start gap-5">
-          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-bold text-2xl shrink-0 overflow-hidden">
+          <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-lg bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-heading font-bold text-2xl shrink-0 overflow-hidden shadow-xs">
             {doctor.profileImage ? (
               <img src={doctor.profileImage} alt={doctorName} className="w-full h-full object-cover" />
             ) : (
@@ -192,21 +192,21 @@ export const DoctorDetailPage: React.FC = () => {
             <div className="flex flex-wrap items-center justify-between gap-3">
               <div>
                 <div className="flex items-center gap-2">
-                  <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">{doctorName}</h1>
+                  <h1 className="font-heading text-xl sm:text-2xl font-bold text-slate-900 tracking-tight">{doctorName}</h1>
                   <span className="badge-clinical badge-success badge-sm">
-                    <ShieldCheck className="w-3.5 h-3.5" />
+                    <ShieldCheck className="w-3.5 h-3.5 text-[#059669]" />
                     Verified
                   </span>
                 </div>
-                <p className="text-sm font-medium text-teal-700 mt-0.5">{doctor.specialization}</p>
+                <p className="text-sm font-semibold text-[#0E4F43] mt-0.5">{doctor.specialization}</p>
                 <p className="text-xs text-slate-500">{doctor.qualification}</p>
               </div>
 
               <div className="flex flex-col items-end gap-2">
                 <StatusBadge status={doctor.status} delayMinutes={doctor.delayMinutes} size="md" />
                 <div className="text-right">
-                  <span className="text-lg font-bold text-slate-900">₹{doctor.consultationFee}</span>
-                  <span className="text-[10px] text-slate-500 font-medium uppercase tracking-wider block">
+                  <span className="font-mono text-xl font-bold text-slate-900 tabular-nums">₹{doctor.consultationFee}</span>
+                  <span className="text-[10px] text-slate-500 font-medium block">
                     Consultation Fee
                   </span>
                 </div>
@@ -216,7 +216,7 @@ export const DoctorDetailPage: React.FC = () => {
                     size="sm"
                     leftIcon={<CalendarIcon className="w-3.5 h-3.5" />}
                   >
-                    Book Appointment
+                    Book Consultation
                   </Button>
                 </a>
               </div>
@@ -331,19 +331,21 @@ export const DoctorDetailPage: React.FC = () => {
 
         {/* Selected Slot Confirmation Bar */}
         {selectedSlot ? (
-          <div className="p-4 rounded-lg bg-teal-50/60 border border-teal-200 space-y-3.5 animate-fade-in">
+          <div className="p-4 rounded-xl bg-[#F0FDF8] border border-[#A7F3D0] space-y-3.5 shadow-xs">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
               <div>
-                <span className="text-[11px] font-semibold uppercase tracking-wider text-teal-800 block">
-                  Selected Time Slot
+                <span className="text-xs font-semibold text-[#0E4F43] block">
+                  Selected Consultation Slot
                 </span>
-                <p className="text-base font-bold text-slate-900 flex items-center gap-1.5 mt-0.5">
-                  <Clock className="w-4 h-4 text-teal-700" />
-                  {selectedSlot.startTime} – {selectedSlot.endTime} on {selectedSlot.date}
+                <p className="text-sm sm:text-base font-bold text-slate-900 flex items-center gap-1.5 mt-0.5">
+                  <Clock className="w-4 h-4 text-[#0E4F43]" />
+                  <span className="font-mono">{selectedSlot.startTime} – {selectedSlot.endTime}</span>
+                  <span className="text-slate-500 font-normal">on</span>
+                  <span className="font-mono font-semibold">{selectedSlot.date}</span>
                 </p>
               </div>
-              <span className="text-xs font-semibold text-teal-900 bg-white px-3 py-1 rounded border border-teal-200 self-start">
-                Consultation Fee: ₹{doctor.consultationFee}
+              <span className="font-mono text-xs font-bold text-[#0E4F43] bg-white px-3 py-1 rounded-md border border-[#A7F3D0] self-start tabular-nums shadow-xs">
+                Fee: ₹{doctor.consultationFee}
               </span>
             </div>
 

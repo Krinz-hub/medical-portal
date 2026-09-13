@@ -41,16 +41,16 @@ export const Calendar: React.FC<CalendarProps> = ({
   }
 
   return (
-    <div className="w-full bg-white rounded-xl border border-slate-200 p-4">
+    <div className="w-full bg-white rounded-xl border border-slate-200/90 p-4 shadow-xs">
       <div className="flex items-center justify-between mb-3 px-0.5">
         <div className="flex items-center gap-2">
-          <CalendarIcon className="w-4 h-4 text-teal-700" />
-          <span className="text-xs font-semibold uppercase tracking-wider text-slate-700">
-            Select Consultation Date
+          <CalendarIcon className="w-4 h-4 text-[#0E4F43]" />
+          <span className="font-heading text-xs font-bold text-slate-800">
+            Consultation Date Strip
           </span>
         </div>
-        <span className="text-xs text-slate-500">
-          Showing next {daysCount} days
+        <span className="text-xs text-slate-500 font-mono">
+          Next {daysCount} days
         </span>
       </div>
 
@@ -66,23 +66,23 @@ export const Calendar: React.FC<CalendarProps> = ({
               onClick={() => onDateChange(item.dateStr)}
               className={`flex flex-col items-center justify-center min-w-[68px] py-2 px-2.5 rounded-lg border transition-colors shrink-0 ${
                 isSelected
-                  ? 'bg-teal-700 border-teal-700 text-white'
-                  : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700'
+                  ? 'bg-[#0E4F43] border-[#0E4F43] text-white shadow-xs'
+                  : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50 text-slate-700 shadow-xs'
               }`}
             >
               <span
                 className={`text-[10px] font-semibold uppercase tracking-wider ${
-                  isSelected ? 'text-teal-100' : 'text-slate-500'
+                  isSelected ? 'text-emerald-200' : 'text-slate-500'
                 }`}
               >
                 {item.isToday ? 'Today' : item.dayName}
               </span>
-              <span className={`text-base font-bold my-0.5 leading-tight ${isSelected ? 'text-white' : 'text-slate-900'}`}>
+              <span className={`font-mono text-base font-bold my-0.5 leading-tight ${isSelected ? 'text-white' : 'text-slate-900'}`}>
                 {item.dayNumber}
               </span>
               <span
                 className={`text-[10px] ${
-                  isSelected ? 'text-teal-200' : 'text-slate-400'
+                  isSelected ? 'text-emerald-100' : 'text-slate-400'
                 }`}
               >
                 {item.monthName}

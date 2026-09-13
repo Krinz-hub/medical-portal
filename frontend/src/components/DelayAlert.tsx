@@ -35,9 +35,9 @@ export const DelayAlert: React.FC<DelayAlertProps> = ({
           Due to extended care during earlier consultations, current consultations are delayed.
         </p>
         {updatedTime && (
-          <div className="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 bg-white rounded-md text-xs font-medium text-amber-950 border border-amber-200">
+          <div className="mt-2.5 inline-flex items-center gap-1.5 px-2.5 py-1 bg-white rounded-md text-xs font-medium text-amber-950 border border-amber-200 shadow-xs">
             <Clock className="w-3.5 h-3.5 text-amber-700" />
-            <span>Updated estimated start: <strong className="font-semibold">{updatedTime}</strong></span>
+            <span>Updated estimated start: <strong className="font-mono font-bold text-amber-950">{updatedTime}</strong></span>
           </div>
         )}
       </div>

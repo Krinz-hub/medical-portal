@@ -74,15 +74,15 @@ export const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-8 h-8 rounded-lg bg-teal-700 text-white flex items-center justify-center">
+            <div className="w-8 h-8 rounded-lg bg-[#0E4F43] text-white flex items-center justify-center shadow-xs">
               <Activity className="w-4 h-4" />
             </div>
             <div className="flex flex-col">
-              <span className="text-base font-bold text-slate-900 tracking-tight leading-none">
-                Med<span className="text-teal-700">Pulse</span>
+              <span className="font-heading text-base font-bold text-slate-900 tracking-tight leading-none">
+                Med<span className="text-[#0E4F43]">Pulse</span>
               </span>
-              <span className="text-[10px] font-medium text-slate-500 tracking-wider uppercase">
-                Doctor Visibility
+              <span className="text-[10px] font-medium text-slate-500 tracking-wider uppercase mt-0.5">
+                Clinical Registry
               </span>
             </div>
           </Link>
@@ -91,13 +91,13 @@ export const Navbar: React.FC = () => {
           <nav className="hidden md:flex items-center gap-1">
             <Link
               to="/doctors"
-              className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                 isActive('/doctors') || isActive('/patient/search')
-                  ? 'bg-slate-100 text-teal-800 font-semibold'
+                  ? 'bg-[#F0FDF8] text-[#0E4F43] font-semibold border border-[#A7F3D0]/60'
                   : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
               }`}
             >
-              <Search className="w-4 h-4" />
+              <Search className="w-3.5 h-3.5" />
               Find Doctors
             </Link>
 
@@ -105,24 +105,24 @@ export const Navbar: React.FC = () => {
               <>
                 <Link
                   to="/patient/appointments"
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                     isActive('/patient/appointments')
-                      ? 'bg-slate-100 text-teal-800 font-semibold'
+                      ? 'bg-[#F0FDF8] text-[#0E4F43] font-semibold border border-[#A7F3D0]/60'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-3.5 h-3.5" />
                   My Appointments
                 </Link>
                 <Link
                   to="/patient/profile"
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                     isActive('/patient/profile')
-                      ? 'bg-slate-100 text-teal-800 font-semibold'
+                      ? 'bg-[#F0FDF8] text-[#0E4F43] font-semibold border border-[#A7F3D0]/60'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
-                  <UserIcon className="w-4 h-4" />
+                  <UserIcon className="w-3.5 h-3.5" />
                   Profile
                 </Link>
               </>
@@ -132,35 +132,35 @@ export const Navbar: React.FC = () => {
               <>
                 <Link
                   to="/doctor"
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                     isActive('/doctor')
-                      ? 'bg-slate-100 text-teal-800 font-semibold'
+                      ? 'bg-[#F0FDF8] text-[#0E4F43] font-semibold border border-[#A7F3D0]/60'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
-                  <Activity className="w-4 h-4" />
+                  <Activity className="w-3.5 h-3.5" />
                   Dashboard
                 </Link>
                 <Link
                   to="/doctor/queue"
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                     isActive('/doctor/queue')
-                      ? 'bg-slate-100 text-teal-800 font-semibold'
+                      ? 'bg-[#F0FDF8] text-[#0E4F43] font-semibold border border-[#A7F3D0]/60'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
-                  <Stethoscope className="w-4 h-4" />
+                  <Stethoscope className="w-3.5 h-3.5" />
                   Live Queue
                 </Link>
                 <Link
                   to="/doctor/schedule"
-                  className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors flex items-center gap-1.5 ${
+                  className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors flex items-center gap-1.5 ${
                     isActive('/doctor/schedule')
-                      ? 'bg-slate-100 text-teal-800 font-semibold'
+                      ? 'bg-[#F0FDF8] text-[#0E4F43] font-semibold border border-[#A7F3D0]/60'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                   }`}
                 >
-                  <Calendar className="w-4 h-4" />
+                  <Calendar className="w-3.5 h-3.5" />
                   Schedule & Slots
                 </Link>
               </>
@@ -186,10 +186,10 @@ export const Navbar: React.FC = () => {
 
                   {/* Notification Dropdown */}
                   {showNotifications && (
-                    <div className="absolute right-0 mt-1.5 w-80 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50 animate-fade-in">
+                    <div className="absolute right-0 mt-1.5 w-80 bg-white rounded-xl shadow-lg border border-slate-200/90 py-2 z-50">
                       <div className="px-3 pb-2 border-b border-slate-100 flex items-center justify-between">
-                        <span className="text-xs font-semibold text-slate-700">Notifications</span>
-                        <span className="text-[10px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 font-medium">{notifications.length}</span>
+                        <span className="text-xs font-semibold text-slate-800">Notifications</span>
+                        <span className="text-[10px] bg-slate-100 px-1.5 py-0.5 rounded text-slate-600 font-medium font-mono">{notifications.length}</span>
                       </div>
                       <div className="max-h-72 overflow-y-auto divide-y divide-slate-100">
                         {notifications.length === 0 ? (
@@ -200,17 +200,17 @@ export const Navbar: React.FC = () => {
                               key={n._id}
                               onClick={() => handleMarkAsRead(n._id)}
                               className={`p-3.5 text-xs cursor-pointer transition-colors hover:bg-slate-50 ${
-                                n.isRead ? 'bg-white text-slate-600' : 'bg-brand-50/50 text-slate-900 font-medium'
+                                n.isRead ? 'bg-white text-slate-600' : 'bg-[#F0FDF8] text-slate-900 font-medium'
                               }`}
                             >
                               <div className="flex items-center justify-between">
-                                <p className="font-bold text-slate-900">{n.title}</p>
+                                <p className="font-semibold text-slate-900">{n.title}</p>
                                 {!n.isRead && (
-                                  <span className="w-2 h-2 rounded-full bg-brand-500" />
+                                  <span className="w-1.5 h-1.5 rounded-full bg-[#0E4F43]" />
                                 )}
                               </div>
                               <p className="text-slate-600 text-[11px] mt-0.5 leading-relaxed">{n.message}</p>
-                              <span className="text-[10px] text-slate-400 mt-1 block">
+                              <span className="text-[10px] text-slate-400 mt-1 block font-mono">
                                 {new Date(n.createdAt).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                               </span>
                             </div>
@@ -225,7 +225,7 @@ export const Navbar: React.FC = () => {
                 <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
                   <div className="text-right">
                     <p className="text-xs font-bold text-slate-900 leading-tight">{user.name}</p>
-                    <span className="text-[10px] uppercase font-bold text-brand-600 tracking-wider">
+                    <span className="text-[10px] uppercase font-mono font-bold text-[#0E4F43] tracking-wide bg-[#F0FDF8] px-1.5 py-0.5 rounded border border-[#A7F3D0]/70">
                       {user.role}
                     </span>
                   </div>

@@ -145,9 +145,9 @@ export const PatientAppointmentsPage: React.FC = () => {
       <div className="flex border-b border-slate-200">
         <button
           onClick={() => setActiveTab('upcoming')}
-          className={`py-2.5 px-4 text-sm font-medium border-b-2 transition-colors ${
+          className={`py-2.5 px-4 text-xs font-semibold border-b-2 transition-colors ${
             activeTab === 'upcoming'
-              ? 'border-teal-700 text-teal-800 font-semibold'
+              ? 'border-[#0E4F43] text-[#0E4F43]'
               : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
@@ -155,9 +155,9 @@ export const PatientAppointmentsPage: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('completed')}
-          className={`py-2.5 px-4 text-sm font-medium border-b-2 transition-colors ${
+          className={`py-2.5 px-4 text-xs font-semibold border-b-2 transition-colors ${
             activeTab === 'completed'
-              ? 'border-teal-700 text-teal-800 font-semibold'
+              ? 'border-[#0E4F43] text-[#0E4F43]'
               : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
@@ -165,9 +165,9 @@ export const PatientAppointmentsPage: React.FC = () => {
         </button>
         <button
           onClick={() => setActiveTab('cancelled')}
-          className={`py-2.5 px-4 text-sm font-medium border-b-2 transition-colors ${
+          className={`py-2.5 px-4 text-xs font-semibold border-b-2 transition-colors ${
             activeTab === 'cancelled'
-              ? 'border-teal-700 text-teal-800 font-semibold'
+              ? 'border-[#0E4F43] text-[#0E4F43]'
               : 'border-transparent text-slate-500 hover:text-slate-900'
           }`}
         >
@@ -317,14 +317,14 @@ export const PatientAppointmentsPage: React.FC = () => {
                     key={slot._id}
                     type="button"
                     onClick={() => setSelectedNewSlot(slot)}
-                    className={`p-2.5 rounded-lg border text-left text-xs transition-colors ${
+                    className={`p-2.5 rounded-lg border text-left text-xs transition-colors shadow-xs ${
                       selectedNewSlot?._id === slot._id
-                        ? 'bg-teal-50 border-teal-700 ring-1 ring-teal-700'
+                        ? 'bg-[#F0FDF8] border-[#0E4F43] ring-1 ring-[#0E4F43]'
                         : 'bg-white border-slate-200 hover:border-slate-300 hover:bg-slate-50'
                     }`}
                   >
-                    <span className="font-semibold text-slate-900 block">{slot.date}</span>
-                    <span className="text-[11px] text-teal-800 font-medium">{slot.startTime} – {slot.endTime}</span>
+                    <span className="font-semibold text-slate-900 block font-mono">{slot.date}</span>
+                    <span className="font-mono text-[11px] text-[#0E4F43] font-semibold">{slot.startTime} – {slot.endTime}</span>
                   </button>
                 ))}
               </div>

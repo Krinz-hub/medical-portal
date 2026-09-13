@@ -4,36 +4,46 @@ export default {
   theme: {
     extend: {
       colors: {
+        clinical: {
+          slate: '#090D16',
+          pine: '#0E4F43',
+          'pine-hover': '#093C33',
+          'pine-light': '#F0FDF8',
+          porcelain: '#F7F9F9',
+          amber: '#D97706',
+          emerald: '#059669',
+          rose: '#E11D48'
+        },
         brand: {
-          50: '#f0fdfa',
-          100: '#ccfbf1',
-          200: '#99f6e4',
-          300: '#5eead4',
-          400: '#2dd4bf',
-          500: '#14b8a6',
-          600: '#0d9488',
-          700: '#0f766e',
-          800: '#115e59',
-          900: '#134e4a',
-          950: '#042f2e'
+          50: '#f0fdf8',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#10b981',
+          600: '#059669',
+          700: '#0E4F43',
+          800: '#093C33',
+          900: '#062923',
+          950: '#031713'
         }
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif']
+        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace']
+      },
+      boxShadow: {
+        xs: '0 1px 2px 0 rgba(9, 13, 22, 0.04)'
       },
       keyframes: {
         fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
-        },
-        scaleIn: {
-          '0%': { opacity: '0', transform: 'scale(0.98)' },
-          '100%': { opacity: '1', transform: 'scale(1)' }
         }
       },
       animation: {
-        'fade-in': 'fadeIn 0.15s ease-out forwards',
-        'scale-in': 'scaleIn 0.15s ease-out forwards'
+        'fade-in': 'fadeIn 0.12s ease-out forwards'
       }
     }
   },

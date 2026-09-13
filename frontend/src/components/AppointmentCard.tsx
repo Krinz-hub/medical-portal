@@ -1,9 +1,8 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Activity, RotateCcw, XCircle, ChevronRight } from 'lucide-react';
+import { Calendar, Clock, MapPin, Activity, RotateCcw, XCircle } from 'lucide-react';
 import { Appointment, DoctorProfile } from '../types';
 import { StatusBadge } from './StatusBadge';
 import { Button } from './ui/Button';
-
 import { formatDoctorName, getTodayLocalDate } from '../utils/dateUtils';
 
 export interface AppointmentCardProps {
@@ -26,63 +25,66 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
   const isConfirmed = appointment.status === 'CONFIRMED';
   const isCheckedIn = appointment.status === 'CHECKED_IN';
   const isInProgress = appointment.status === 'IN_PROGRESS';
-  const isCompleted = appointment.status === 'COMPLETED';
-  const isCancelled = appointment.status === 'CANCELLED';
-
   const todayStr = getTodayLocalDate();
   const isToday = appointment.date === todayStr;
   const canTrackQueue = (isConfirmed || isCheckedIn || isInProgress) && isToday;
   const canModify = isConfirmed;
 
   return (
-    <div className="card-clinical-interactive p-5">
+    <div className="bg-white rounded-xl border border-slate-200/90 shadow-xs p-5 hover:border-slate-300 transition-colors duration-150">
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 border-b border-slate-100 pb-3.5">
         <div>
           <div className="flex items-center gap-2">
-            <h3 className="text-base font-bold text-slate-900">{doctorName}</h3>
+            <h3 className="font-heading text-base font-bold text-slate-900">{doctorName}</h3>
             {doctor?.specialization && (
-              <span className="badge-clinical badge-primary badge-sm">
+              <span className="text-xs font-medium text-[#0E4F43] bg-[#F0FDF8] px-2 py-0.5 rounded border border-[#A7F3D0]/60">
                 {doctor.specialization}
               </span>
             )}
           </div>
           {doctor?.clinicName && (
-            <p className="text-xs text-slate-500 mt-1 flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-slate-400" />
-              {doctor.clinicName} · {doctor.clinicAddress}
+            <p className="text-xs text-slate-500 mt-1 flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+              <span>{doctor.clinicName} — {doctor.clinicAddress}</span>
             </p>
           )}
         </div>
 
         <div className="flex items-center gap-2 self-start">
           <StatusBadge status={appointment.status} />
-          <span className="badge-clinical badge-neutral badge-sm font-semibold">
+          <span className="font-mono text-xs font-bold text-slate-900 bg-slate-100 px-2 py-1 rounded border border-slate-200">
             Token #{appointment.queueNumber}
           </span>
         </div>
       </div>
 
-      {/* Date & Time Row */}
-      <div className="py-3 flex flex-wrap items-center gap-4 text-xs text-slate-700">
-        <span className="flex items-center gap-1.5 font-semibold">
-          <Calendar className="w-4 h-4 text-brand-600" />
-          {appointment.date}
+      {/* Date, Time & Reason */}
+      <div className="py-3.5 flex flex-wrap items-center gap-4 text-xs text-slate-700">
+        <div className="flex items-center gap-1.5">
+          <Calendar className="w-4 h-4 text-[#0E4F43]" />
+          <span className="font-mono font-medium">{appointment.date}</span>
           {isToday && (
-            <span className="text-[10px] uppercase font-extrabold bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded">
+            <span className="text-[10px] font-bold uppercase font-mono bg-[#ECFDF5] text-[#059669] px-1.5 py-0.5 rounded border border-[#A7F3D0]">
               Today
             </span>
           )}
-        </span>
-        <span className="flex items-center gap-1.5 font-semibold">
-          <Clock className="w-4 h-4 text-brand-600" />
-          {appointment.startTime} – {appointment.endTime}
-        </span>
-        <span className="text-slate-500 italic truncate max-w-xs">
-          "{appointment.reason || 'General Consultation'}"
-        </span>
+        </div>
+
+        <div className="flex items-center gap-1.5">
+          <Clock className="w-4 h-4 text-[#0E4F43]" />
+          <span className="font-mono font-semibold text-slate-900">
+            {appointment.startTime} – {appointment.endTime}
+          </span>
+        </div>
+
+        {appointment.reason && (
+          <div className="text-slate-500 truncate max-w-xs pl-2 border-l border-slate-200">
+            "{appointment.reason}"
+          </div>
+        )}
       </div>
 
-      {/* Action Buttons */}
+      {/* Contextual Actions */}
       <div className="pt-3 border-t border-slate-100 flex flex-wrap items-center gap-2 justify-end">
         {canTrackQueue && onViewLiveQueue && (
           <Button
@@ -110,7 +112,7 @@ export const AppointmentCard: React.FC<AppointmentCardProps> = ({
           <Button
             size="sm"
             variant="ghost"
-            className="text-rose-600 hover:bg-rose-50 hover:text-rose-700"
+            className="text-[#E11D48] hover:bg-rose-50 hover:text-rose-700"
             leftIcon={<XCircle className="w-3.5 h-3.5" />}
             onClick={() => onCancel(appointment)}
           >

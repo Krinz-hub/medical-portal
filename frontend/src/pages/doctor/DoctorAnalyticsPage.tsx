@@ -29,7 +29,7 @@ export const DoctorAnalyticsPage: React.FC = () => {
     <div className="page-container">
       <div className="page-header items-start">
         <div className="flex items-start gap-4">
-          <div className="p-2.5 bg-teal-50 border border-teal-200 rounded-lg text-teal-800 shrink-0">
+          <div className="p-2.5 bg-[#F0FDF8] border border-[#A7F3D0] rounded-lg text-[#0E4F43] shrink-0 shadow-xs">
             <BarChart3 className="w-6 h-6" />
           </div>
           <div>
@@ -82,16 +82,16 @@ export const DoctorAnalyticsPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div className="card-clinical p-5 space-y-2">
             <span className="text-xs font-semibold uppercase text-slate-500">Total Consultations</span>
-            <p className="text-3xl font-bold text-slate-900">{overall.total || 0}</p>
+            <p className="font-mono text-3xl font-bold text-slate-900 tabular-nums">{overall.total || 0}</p>
             <p className="text-xs text-slate-500">Recorded patient visits on platform</p>
           </div>
 
           <div className="card-clinical p-5 space-y-2">
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold uppercase text-emerald-700">Completion Rate</span>
-              <TrendingUp className="w-4 h-4 text-emerald-700" />
+              <span className="text-xs font-semibold uppercase text-[#059669]">Completion Rate</span>
+              <TrendingUp className="w-4 h-4 text-[#059669]" />
             </div>
-            <p className="text-3xl font-bold text-emerald-700">{completionRateDisplay}</p>
+            <p className="font-mono text-3xl font-bold text-[#059669] tabular-nums">{completionRateDisplay}</p>
             <p className="text-xs text-slate-500">
               {hasOverallData
                 ? `${overall.completed || 0} of ${overall.total} visits completed`
@@ -101,7 +101,7 @@ export const DoctorAnalyticsPage: React.FC = () => {
 
           <div className="card-clinical p-5 space-y-2">
             <span className="text-xs font-semibold uppercase text-slate-500">Average Duration</span>
-            <p className="text-3xl font-bold text-teal-800">{overall.averageConsultationMinutes || 20}m</p>
+            <p className="font-mono text-3xl font-bold text-[#0E4F43] tabular-nums">{overall.averageConsultationMinutes || 20}m</p>
             <p className="text-xs text-slate-500">Standard consultation buffer per patient</p>
           </div>
         </div>

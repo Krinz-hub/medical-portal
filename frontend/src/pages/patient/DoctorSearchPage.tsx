@@ -159,7 +159,7 @@ export const DoctorSearchPage: React.FC = () => {
       {/* Main Content: Results Count & Grid */}
       <div className="space-y-4">
         <div className="flex items-center justify-between px-1">
-          <p className="text-xs font-bold uppercase tracking-wider text-slate-400">
+          <p className="font-heading text-xs font-bold text-slate-600">
             {isLoading ? 'Searching verified physicians...' : `Found ${doctors.length} Doctor${doctors.length === 1 ? '' : 's'}`}
           </p>
         </div>

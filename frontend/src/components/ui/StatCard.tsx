@@ -33,8 +33,8 @@ export const StatCard: React.FC<StatCardProps> = ({
     <Card className="p-5">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-slate-500">{title}</p>
-          <h4 className="text-2xl font-bold text-slate-900 mt-1 tracking-tight">{value}</h4>
+          <p className="font-heading text-xs font-semibold text-slate-600">{title}</p>
+          <h4 className="font-mono text-2xl font-bold text-slate-900 mt-1 tracking-tight tabular-nums">{value}</h4>
           {subtitle && <p className="text-xs text-slate-500 mt-0.5">{subtitle}</p>}
         </div>
         {icon && (

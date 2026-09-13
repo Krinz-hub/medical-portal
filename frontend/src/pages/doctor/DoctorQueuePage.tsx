@@ -92,19 +92,19 @@ export const DoctorQueuePage: React.FC = () => {
 
       {/* Active Consultation Banner */}
       {currentlyInConsultation && (
-        <div className="alert-banner-info flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="p-5 rounded-xl bg-[#F0FDF8] border border-[#A7F3D0] shadow-xs flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="w-12 h-12 rounded-lg bg-teal-700 text-white flex items-center justify-center text-lg font-bold shrink-0">
+            <div className="w-12 h-12 rounded-lg bg-[#0E4F43] text-white flex items-center justify-center font-mono text-lg font-bold shrink-0 shadow-xs">
               #{currentlyInConsultation.queueNumber}
             </div>
             <div>
               <span className="badge-clinical badge-sm badge-brand">
-                <span className="badge-dot bg-emerald-500"></span>
-                Active Consultation
+                <span className="badge-dot bg-[#059669]"></span>
+                In Consultation Room
               </span>
-              <h3 className="text-lg font-bold text-slate-900 mt-0.5">{currentlyInConsultation.patientName}</h3>
+              <h3 className="font-heading text-lg font-bold text-slate-900 mt-0.5">{currentlyInConsultation.patientName}</h3>
               <p className="text-xs text-slate-600 mt-0.5">
-                Scheduled: {currentlyInConsultation.startTime} · Reason: {currentlyInConsultation.reason || 'General Consultation'}
+                Scheduled Slot: <strong className="font-mono text-[#0E4F43]">{currentlyInConsultation.startTime}</strong> · Reason: {currentlyInConsultation.reason || 'General Consultation'}
               </p>
             </div>
           </div>
@@ -175,7 +175,7 @@ export const DoctorQueuePage: React.FC = () => {
                       key={item.appointmentId}
                       className={`tr-clinical ${isCurrent ? 'tr-active' : ''}`}
                     >
-                      <td className="td-clinical font-bold text-teal-800 text-sm">
+                      <td className="td-clinical font-mono font-bold text-[#0E4F43] text-sm tabular-nums">
                         #{item.queueNumber}
                       </td>
 
@@ -195,7 +195,7 @@ export const DoctorQueuePage: React.FC = () => {
                         )}
                       </td>
 
-                      <td className="td-clinical font-medium text-slate-700">
+                      <td className="td-clinical font-mono font-medium text-slate-800 tabular-nums">
                         {item.startTime} – {item.endTime}
                       </td>
 

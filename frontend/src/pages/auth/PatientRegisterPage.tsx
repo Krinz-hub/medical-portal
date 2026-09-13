@@ -122,7 +122,6 @@ export const PatientRegisterPage: React.FC = () => {
               size="lg"
               className="w-full mt-2"
               isLoading={isLoading}
-              rightIcon={<ArrowRight className="w-4 h-4" />}
             >
               Complete Registration
             </Button>
@@ -130,7 +129,7 @@ export const PatientRegisterPage: React.FC = () => {
 
           <div className="pt-2 border-t border-slate-100 text-center text-xs text-slate-500">
             Already have an account?{' '}
-            <Link to="/login" className="font-semibold text-teal-700 hover:text-teal-800">
+            <Link to="/login" className="font-semibold text-[#0E4F43] hover:underline">
               Sign In
             </Link>
           </div>
